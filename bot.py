@@ -24,7 +24,7 @@ async def start(client,message):
   
 @app.on_message(filters.private & filters.regex("http|https"))
 async def Bitly(client,message):
-  URL = f"http://sh.st/st/83b8f0a212705ef7d85a5c2a3a730043/{message.text}"
+  URL = message.text
   DOMAIN = "bit.ly"
   value  = {'long_url': URL , 'domain': DOMAIN}
   data = json.dumps(value)
