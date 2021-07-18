@@ -5,6 +5,10 @@ import requests
 import json 
 import os
 import pymongo 
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup
+)
 
 DB_URL = os.environ.get("DB_URL","")
 TOKEN = os.environ.get("TOKEN", "")
