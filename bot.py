@@ -42,6 +42,13 @@ async def start(client,message):
   
 @app.on_message(filters.private & filters.regex("http|https"))
 async def Bitly(client,message):
+  user_id = int(message.chat.id)
+  user_det = {"_id":user_id}
+  try:
+  	dbcol.insert_one(user_det)
+  except:
+  	pass
+  	
   URL = message.text
   DOMAIN = "bit.ly"
   value  = {'long_url': URL , 'domain': DOMAIN}
